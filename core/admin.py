@@ -35,6 +35,4 @@ class ContactMessageAdmin(admin.ModelAdmin):
     ordering = ('-created_at',)
     date_hierarchy = 'created_at'
 
-    admin.site.register(ContactMessage)
-    admin.site.register(ChatMessage)
-    admin.site.register(QuoteRequest)
+   
