@@ -28,9 +28,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-(qs=110cffb_nb+2=3g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False').lower() in ('1', 'true', 'yes', 'on')
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,.up.railway.app').split(',') if host.strip()]
-CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000,http://127.0.0.1:8000').split(',') if origin.strip()]
-
+ALLOWED_HOSTS = ['web-production-ed425d.up.railway.app', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-ed425d.up.railway.app']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
